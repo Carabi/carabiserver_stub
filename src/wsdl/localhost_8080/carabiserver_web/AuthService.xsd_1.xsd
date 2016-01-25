@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://soap.server.carabi.ru/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://soap.server.carabi.ru/">
+
+<xs:element name="CarabiException" type="tns:CarabiException"/>
+
+<xs:element name="RegisterException" type="tns:RegisterException"/>
+
+<xs:element name="createTokenSimple" type="tns:createTokenSimple"/>
+
+<xs:element name="createTokenSimpleResponse" type="tns:createTokenSimpleResponse"/>
+
+<xs:element name="disconnect" type="tns:disconnect"/>
+
+<xs:element name="disconnectResponse" type="tns:disconnectResponse"/>
+
+<xs:element name="removeToken" type="tns:removeToken"/>
+
+<xs:element name="removeTokenResponse" type="tns:removeTokenResponse"/>
+
+<xs:complexType name="disconnect">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="disconnectResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="removeToken">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeTokenResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="createTokenSimple">
+<xs:sequence>
+<xs:element name="login" type="xs:string" minOccurs="0"/>
+<xs:element name="passwordHash" type="xs:string" minOccurs="0"/>
+<xs:element name="userAgent" type="xs:string" minOccurs="0"/>
+<xs:element name="clientIp" type="xs:string" minOccurs="0"/>
+<xs:element name="continuousConnection" type="xs:boolean"/>
+<xs:element name="schemaName" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createTokenSimpleResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+<xs:element name="schemaName" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RegisterException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+<xs:element name="messageCode" type="tns:messageCode" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CarabiException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="messageCode">
+<xs:restriction base="xs:string">
+<xs:enumeration value="INTERNAL_ERROR"/>
+<xs:enumeration value="ORACLE_ERROR"/>
+<xs:enumeration value="ILLEGAL_LOGIN_OR_PASSWORD"/>
+<xs:enumeration value="NO_LOGIN_KERNEL"/>
+<xs:enumeration value="NO_LOGIN_ORACLE"/>
+<xs:enumeration value="BAD_PASSWORD_KERNEL"/>
+<xs:enumeration value="BAD_PASSWORD_ORACLE"/>
+<xs:enumeration value="NO_WEBUSER"/>
+<xs:enumeration value="NO_SCHEMA"/>
+<xs:enumeration value="NO_TOKEN"/>
+<xs:enumeration value="VERSION_MISMATCH"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>

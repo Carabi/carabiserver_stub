@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/carabiserver_web/AuthService?wsdl" uri="wsdl/localhost_8080/carabiserver_web/AuthService.wsdl"/>
+    <system systemId="http://localhost:8080/carabiserver_web/AuthService?xsd=1" uri="wsdl/localhost_8080/carabiserver_web/AuthService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/carabiserver_web/ProfileService?wsdl" uri="wsdl/localhost_8080/carabiserver_web/ProfileService.wsdl"/>
+    <system systemId="http://localhost:8080/carabiserver_web/ProfileService?xsd=1" uri="wsdl/localhost_8080/carabiserver_web/ProfileService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/carabiserver_web/AdminService?wsdl" uri="wsdl/localhost_8080/carabiserver_web/AdminService.wsdl"/>
+    <system systemId="http://localhost:8080/carabiserver_web/AdminService?xsd=1" uri="wsdl/localhost_8080/carabiserver_web/AdminService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/carabiserver_web/EventerService?wsdl" uri="wsdl/localhost_8080/carabiserver_web/EventerService.wsdl"/>
+    <system systemId="http://localhost:8080/carabiserver_web/EventerService?xsd=1" uri="wsdl/localhost_8080/carabiserver_web/EventerService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/carabiserver_web/QueryService?wsdl" uri="wsdl/localhost_8080/carabiserver_web/QueryService.wsdl"/>
+    <system systemId="http://localhost:8080/carabiserver_web/QueryService?xsd=1" uri="wsdl/localhost_8080/carabiserver_web/QueryService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/carabiserver_web/ChatService?wsdl" uri="wsdl/localhost_8080/carabiserver_web/ChatService.wsdl"/>
+    <system systemId="http://localhost:8080/carabiserver_web/ChatService?xsd=1" uri="wsdl/localhost_8080/carabiserver_web/ChatService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/carabiserver_web/ImagesService?wsdl" uri="wsdl/localhost_8080/carabiserver_web/ImagesService.wsdl"/>
+    <system systemId="http://localhost:8080/carabiserver_web/ImagesService?xsd=1" uri="wsdl/localhost_8080/carabiserver_web/ImagesService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/carabiserver_web/ExternalApiService?wsdl" uri="wsdl/localhost_8080/carabiserver_web/ExternalApiService.wsdl"/>
+    <system systemId="http://localhost:8080/carabiserver_web/ExternalApiService?xsd=1" uri="wsdl/localhost_8080/carabiserver_web/ExternalApiService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/carabiserver_web/PhoneService?wsdl" uri="wsdl/localhost_8080/carabiserver_web/PhoneService.wsdl"/>
+    <system systemId="http://localhost:8080/carabiserver_web/PhoneService?xsd=1" uri="wsdl/localhost_8080/carabiserver_web/PhoneService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/carabiserver_web/MonitorService?wsdl" uri="wsdl/localhost_8080/carabiserver_web/MonitorService.wsdl"/>
+    <system systemId="http://localhost:8080/carabiserver_web/MonitorService?xsd=1" uri="wsdl/localhost_8080/carabiserver_web/MonitorService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/carabiserver_web/ProductionService?wsdl" uri="wsdl/localhost_8080/carabiserver_web/ProductionService.wsdl"/>
+    <system systemId="http://localhost:8080/carabiserver_web/ProductionService?xsd=1" uri="wsdl/localhost_8080/carabiserver_web/ProductionService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/carabiserver_web/GuestService?wsdl" uri="wsdl/localhost_8080/carabiserver_web/GuestService.wsdl"/>
+    <system systemId="http://localhost:8080/carabiserver_web/GuestService?xsd=1" uri="wsdl/localhost_8080/carabiserver_web/GuestService.xsd_1.xsd"/>
+</catalog>

@@ -1,0 +1,387 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://soap.server.carabi.ru/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://soap.server.carabi.ru/">
+
+<xs:element name="CarabiException" type="tns:CarabiException"/>
+
+<xs:element name="assertPermisionAllowed" type="tns:assertPermisionAllowed"/>
+
+<xs:element name="assertPermisionAllowedResponse" type="tns:assertPermisionAllowedResponse"/>
+
+<xs:element name="assertProductionAllowed" type="tns:assertProductionAllowed"/>
+
+<xs:element name="assertProductionAllowedResponse" type="tns:assertProductionAllowedResponse"/>
+
+<xs:element name="assertProductionAvailable" type="tns:assertProductionAvailable"/>
+
+<xs:element name="assertProductionAvailableResponse" type="tns:assertProductionAvailableResponse"/>
+
+<xs:element name="getAllowedProduction" type="tns:getAllowedProduction"/>
+
+<xs:element name="getAllowedProductionResponse" type="tns:getAllowedProductionResponse"/>
+
+<xs:element name="getAvailableProduction" type="tns:getAvailableProduction"/>
+
+<xs:element name="getAvailableProductionResponse" type="tns:getAvailableProductionResponse"/>
+
+<xs:element name="getPermissions" type="tns:getPermissions"/>
+
+<xs:element name="getPermissionsResponse" type="tns:getPermissionsResponse"/>
+
+<xs:element name="getShowOnlineMode" type="tns:getShowOnlineMode"/>
+
+<xs:element name="getShowOnlineModeResponse" type="tns:getShowOnlineModeResponse"/>
+
+<xs:element name="havePermision" type="tns:havePermision"/>
+
+<xs:element name="havePermisionResponse" type="tns:havePermisionResponse"/>
+
+<xs:element name="productionIsAllowed" type="tns:productionIsAllowed"/>
+
+<xs:element name="productionIsAllowedResponse" type="tns:productionIsAllowedResponse"/>
+
+<xs:element name="productionIsAvailable" type="tns:productionIsAvailable"/>
+
+<xs:element name="productionIsAvailableResponse" type="tns:productionIsAvailableResponse"/>
+
+<xs:element name="setShowOnlineMode" type="tns:setShowOnlineMode"/>
+
+<xs:element name="setShowOnlineModeResponse" type="tns:setShowOnlineModeResponse"/>
+
+<xs:complexType name="getAllowedProduction">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="currentProduct" type="xs:string" minOccurs="0"/>
+<xs:element name="showInvisible" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAllowedProductionResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:softwareProduct" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="softwareProduct">
+<xs:complexContent>
+<xs:extension base="tns:abstractEntity">
+<xs:sequence>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="homeUrl" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="parentProductId" type="xs:int" minOccurs="0"/>
+<xs:element name="permissionToUse" type="tns:permission" minOccurs="0"/>
+<xs:element name="sysname" type="xs:string" minOccurs="0"/>
+<xs:element name="versions" type="tns:productVersion" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="visible" type="xs:boolean"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="abstractEntity" abstract="true">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="permission">
+<xs:complexContent>
+<xs:extension base="tns:abstractEntity">
+<xs:sequence>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="parentPermissionId" type="xs:int" minOccurs="0"/>
+<xs:element name="permissionToAssignId" type="xs:int" minOccurs="0"/>
+<xs:element name="sysname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="productVersion">
+<xs:sequence>
+<xs:element name="destinatedForDepartment" type="tns:department" minOccurs="0"/>
+<xs:element name="doNotAdviceNewerCommon" type="xs:boolean"/>
+<xs:element name="downloadUrl" type="xs:string" minOccurs="0"/>
+<xs:element name="file" type="tns:fileOnServer" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="issueDate" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="singularity" type="xs:string" minOccurs="0"/>
+<xs:element name="versionNumber" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="department">
+<xs:complexContent>
+<xs:extension base="tns:abstractEntity">
+<xs:sequence>
+<xs:element name="defaultSchema" type="tns:connectionSchema" minOccurs="0"/>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="mainServer" type="tns:carabiAppServer" minOccurs="0"/>
+<xs:element name="members" type="tns:carabiUser" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="parentDepartmentId" type="xs:int" minOccurs="0"/>
+<xs:element name="sysname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="connectionSchema">
+<xs:sequence>
+<xs:element name="address" type="xs:string" minOccurs="0"/>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="JNDI" type="xs:string" minOccurs="0"/>
+<xs:element name="login" type="xs:string" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="sysname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="carabiAppServer">
+<xs:sequence>
+<xs:element name="computer" type="xs:string" minOccurs="0"/>
+<xs:element name="contextroot" type="xs:string" minOccurs="0"/>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="eventerPort" type="xs:int"/>
+<xs:element name="glassfishPort" type="xs:int"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="isEnabledInt" type="xs:int"/>
+<xs:element name="isMasterInt" type="xs:int"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="sysname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="carabiUser">
+<xs:complexContent>
+<xs:extension base="tns:abstractEntity">
+<xs:sequence>
+<xs:element name="allowedSchemas" type="tns:connectionSchema" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="avatar" type="tns:fileOnServer" minOccurs="0"/>
+<xs:element name="carabiDepartment" type="xs:string" minOccurs="0"/>
+<xs:element name="carabiRole" type="xs:string" minOccurs="0"/>
+<xs:element name="corporation" type="tns:department" minOccurs="0"/>
+<xs:element name="defaultSchema" type="tns:connectionSchema" minOccurs="0"/>
+<xs:element name="department" type="tns:department" minOccurs="0"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="entersToServers" type="tns:userServerEnter" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="firstname" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="lastActive" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="lastname" type="xs:string" minOccurs="0"/>
+<xs:element name="login" type="xs:string" minOccurs="0"/>
+<xs:element name="mainServer" type="tns:carabiAppServer" minOccurs="0"/>
+<xs:element name="middlename" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="phonesList" type="tns:phone" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="relatedDepartments" type="tns:department" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="roles" type="tns:userRole" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="showOnlineInt" type="xs:int"/>
+<xs:element name="status" type="tns:userStatus" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="fileOnServer">
+<xs:complexContent>
+<xs:extension base="tns:abstractEntity">
+<xs:sequence>
+<xs:element name="contentAddress" type="xs:string" minOccurs="0"/>
+<xs:element name="contentLength" type="xs:long" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="mimeType" type="xs:string" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="userServerEnter">
+<xs:sequence>
+<xs:element name="numberOfEnters" type="xs:long"/>
+<xs:element name="server" type="tns:carabiAppServer" minOccurs="0"/>
+<xs:element name="user" type="tns:carabiUser" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="phone">
+<xs:complexContent>
+<xs:extension base="tns:abstractEntity">
+<xs:sequence>
+<xs:element name="countryCode" type="xs:int" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="mainNumber" type="xs:long"/>
+<xs:element name="ordernumber" type="xs:int"/>
+<xs:element name="owner" type="tns:carabiUser" minOccurs="0"/>
+<xs:element name="phoneType" type="tns:phoneType" minOccurs="0"/>
+<xs:element name="regionCode" type="xs:int" minOccurs="0"/>
+<xs:element name="sipSchema" type="tns:connectionSchema" minOccurs="0"/>
+<xs:element name="suffix" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="phoneType">
+<xs:sequence>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="sysname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="userRole">
+<xs:complexContent>
+<xs:extension base="tns:abstractEntity">
+<xs:sequence>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="permissions" type="tns:permission" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="sysname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="userStatus">
+<xs:sequence>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="sysname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CarabiException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="assertProductionAvailable">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="productSysname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="assertProductionAvailableResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="productionIsAllowed">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="productSysname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="productionIsAllowedResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="productionIsAvailable">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="productSysname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="productionIsAvailableResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAvailableProduction">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="currentProduct" type="xs:string" minOccurs="0"/>
+<xs:element name="showInvisible" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAvailableProductionResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:softwareProduct" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPermissions">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="parentPermissionSysname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPermissionsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:permission" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getShowOnlineMode">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getShowOnlineModeResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="assertProductionAllowed">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="productSysname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="assertProductionAllowedResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="setShowOnlineMode">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="showOnline" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setShowOnlineModeResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="havePermision">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="permission" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="havePermisionResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="assertPermisionAllowed">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="permission" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="assertPermisionAllowedResponse">
+<xs:sequence/>
+</xs:complexType>
+</xs:schema>

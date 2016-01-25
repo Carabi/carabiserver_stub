@@ -1,0 +1,799 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://soap.server.carabi.ru/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://soap.server.carabi.ru/">
+
+<xs:element name="CarabiException" type="tns:CarabiException"/>
+
+<xs:element name="RegisterException" type="tns:RegisterException"/>
+
+<xs:element name="addUserRelations" type="tns:addUserRelations"/>
+
+<xs:element name="addUserRelationsResponse" type="tns:addUserRelationsResponse"/>
+
+<xs:element name="assignPermissionForRole" type="tns:assignPermissionForRole"/>
+
+<xs:element name="assignPermissionForRoleResponse" type="tns:assignPermissionForRoleResponse"/>
+
+<xs:element name="assignPermissionForUser" type="tns:assignPermissionForUser"/>
+
+<xs:element name="assignPermissionForUserResponse" type="tns:assignPermissionForUserResponse"/>
+
+<xs:element name="assignRoleForUser" type="tns:assignRoleForUser"/>
+
+<xs:element name="assignRoleForUserResponse" type="tns:assignRoleForUserResponse"/>
+
+<xs:element name="copyPermissionsFromRoleToRole" type="tns:copyPermissionsFromRoleToRole"/>
+
+<xs:element name="copyPermissionsFromRoleToRoleResponse" type="tns:copyPermissionsFromRoleToRoleResponse"/>
+
+<xs:element name="copyPermissionsFromRoleToUser" type="tns:copyPermissionsFromRoleToUser"/>
+
+<xs:element name="copyPermissionsFromRoleToUserResponse" type="tns:copyPermissionsFromRoleToUserResponse"/>
+
+<xs:element name="copyPermissionsFromUserToRole" type="tns:copyPermissionsFromUserToRole"/>
+
+<xs:element name="copyPermissionsFromUserToRoleResponse" type="tns:copyPermissionsFromUserToRoleResponse"/>
+
+<xs:element name="deleteCategory" type="tns:deleteCategory"/>
+
+<xs:element name="deleteCategoryResponse" type="tns:deleteCategoryResponse"/>
+
+<xs:element name="deleteQuery" type="tns:deleteQuery"/>
+
+<xs:element name="deleteQueryResponse" type="tns:deleteQueryResponse"/>
+
+<xs:element name="deleteRole" type="tns:deleteRole"/>
+
+<xs:element name="deleteRoleResponse" type="tns:deleteRoleResponse"/>
+
+<xs:element name="deleteSchema" type="tns:deleteSchema"/>
+
+<xs:element name="deleteSchemaResponse" type="tns:deleteSchemaResponse"/>
+
+<xs:element name="deleteUser" type="tns:deleteUser"/>
+
+<xs:element name="deleteUserResponse" type="tns:deleteUserResponse"/>
+
+<xs:element name="getActiveUsersList" type="tns:getActiveUsersList"/>
+
+<xs:element name="getActiveUsersListResponse" type="tns:getActiveUsersListResponse"/>
+
+<xs:element name="getCategoriesList" type="tns:getCategoriesList"/>
+
+<xs:element name="getCategoriesListResponse" type="tns:getCategoriesListResponse"/>
+
+<xs:element name="getPhoneTypes" type="tns:getPhoneTypes"/>
+
+<xs:element name="getPhoneTypesResponse" type="tns:getPhoneTypesResponse"/>
+
+<xs:element name="getQueriesList" type="tns:getQueriesList"/>
+
+<xs:element name="getQueriesListResponse" type="tns:getQueriesListResponse"/>
+
+<xs:element name="getQuery" type="tns:getQuery"/>
+
+<xs:element name="getQueryResponse" type="tns:getQueryResponse"/>
+
+<xs:element name="getRolePermissions" type="tns:getRolePermissions"/>
+
+<xs:element name="getRolePermissionsResponse" type="tns:getRolePermissionsResponse"/>
+
+<xs:element name="getRolesList" type="tns:getRolesList"/>
+
+<xs:element name="getRolesListResponse" type="tns:getRolesListResponse"/>
+
+<xs:element name="getSchema" type="tns:getSchema"/>
+
+<xs:element name="getSchemaResponse" type="tns:getSchemaResponse"/>
+
+<xs:element name="getSchemasList" type="tns:getSchemasList"/>
+
+<xs:element name="getSchemasListResponse" type="tns:getSchemasListResponse"/>
+
+<xs:element name="getUser" type="tns:getUser"/>
+
+<xs:element name="getUserAllowedSchemas" type="tns:getUserAllowedSchemas"/>
+
+<xs:element name="getUserAllowedSchemasResponse" type="tns:getUserAllowedSchemasResponse"/>
+
+<xs:element name="getUserPermissions" type="tns:getUserPermissions"/>
+
+<xs:element name="getUserPermissionsResponse" type="tns:getUserPermissionsResponse"/>
+
+<xs:element name="getUserResponse" type="tns:getUserResponse"/>
+
+<xs:element name="getUsersHavingPermission" type="tns:getUsersHavingPermission"/>
+
+<xs:element name="getUsersHavingPermissionResponse" type="tns:getUsersHavingPermissionResponse"/>
+
+<xs:element name="getUsersList" type="tns:getUsersList"/>
+
+<xs:element name="getUsersListResponse" type="tns:getUsersListResponse"/>
+
+<xs:element name="removeUserRelations" type="tns:removeUserRelations"/>
+
+<xs:element name="removeUserRelationsResponse" type="tns:removeUserRelationsResponse"/>
+
+<xs:element name="saveCategory" type="tns:saveCategory"/>
+
+<xs:element name="saveCategoryResponse" type="tns:saveCategoryResponse"/>
+
+<xs:element name="saveQuery" type="tns:saveQuery"/>
+
+<xs:element name="saveQueryResponse" type="tns:saveQueryResponse"/>
+
+<xs:element name="saveRole" type="tns:saveRole"/>
+
+<xs:element name="saveRoleResponse" type="tns:saveRoleResponse"/>
+
+<xs:element name="saveSchema" type="tns:saveSchema"/>
+
+<xs:element name="saveSchemaResponse" type="tns:saveSchemaResponse"/>
+
+<xs:element name="saveUser" type="tns:saveUser"/>
+
+<xs:element name="saveUserResponse" type="tns:saveUserResponse"/>
+
+<xs:element name="searchQueries" type="tns:searchQueries"/>
+
+<xs:element name="searchQueriesResponse" type="tns:searchQueriesResponse"/>
+
+<xs:element name="setQueryDeprecated" type="tns:setQueryDeprecated"/>
+
+<xs:element name="setQueryDeprecatedResponse" type="tns:setQueryDeprecatedResponse"/>
+
+<xs:element name="setUserStatus" type="tns:setUserStatus"/>
+
+<xs:element name="setUserStatusResponse" type="tns:setUserStatusResponse"/>
+
+<xs:element name="userHasPermision" type="tns:userHasPermision"/>
+
+<xs:element name="userHasPermisionResponse" type="tns:userHasPermisionResponse"/>
+
+<xs:complexType name="getUser">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUserResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CarabiException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteQuery">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteQueryResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="setQueryDeprecated">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="isDeprecated" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setQueryDeprecatedResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getQueriesList">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="categoryId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getQueriesListResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="copyPermissionsFromRoleToRole">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="originalRole" type="xs:string" minOccurs="0"/>
+<xs:element name="newRole" type="xs:string" minOccurs="0"/>
+<xs:element name="removeOldPermossions" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="copyPermissionsFromRoleToRoleResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getActiveUsersList">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getActiveUsersListResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeUserRelations">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="relatedUsersList" type="xs:string" minOccurs="0"/>
+<xs:element name="relation" type="xs:string" minOccurs="0"/>
+<xs:element name="mainUserLogin" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeUserRelationsResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getUserPermissions">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="login" type="xs:string" minOccurs="0"/>
+<xs:element name="parentPermissionSysname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUserPermissionsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:permission" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="permission">
+<xs:complexContent>
+<xs:extension base="tns:abstractEntity">
+<xs:sequence>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="parentPermissionId" type="xs:int" minOccurs="0"/>
+<xs:element name="permissionToAssignId" type="xs:int" minOccurs="0"/>
+<xs:element name="sysname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="abstractEntity" abstract="true">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getPhoneTypes">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPhoneTypesResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="copyPermissionsFromUserToRole">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="userLogin" type="xs:string" minOccurs="0"/>
+<xs:element name="newRole" type="xs:string" minOccurs="0"/>
+<xs:element name="removeOldPermossions" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="copyPermissionsFromUserToRoleResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="deleteSchema">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteSchemaResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="addUserRelations">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="relatedUsersList" type="xs:string" minOccurs="0"/>
+<xs:element name="relation" type="xs:string" minOccurs="0"/>
+<xs:element name="mainUserLogin" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addUserRelationsResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="setUserStatus">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="login" type="xs:string" minOccurs="0"/>
+<xs:element name="status" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setUserStatusResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="searchQueries">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="condition" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="searchQueriesResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getQuery">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getQueryResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="saveUser">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="strUser" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="saveUserResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:long" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getSchemasList">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getSchemasListResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="copyPermissionsFromRoleToUser">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="originalRole" type="xs:string" minOccurs="0"/>
+<xs:element name="userLogin" type="xs:string" minOccurs="0"/>
+<xs:element name="removeOldPermossions" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="copyPermissionsFromRoleToUserResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="saveRole">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="strRole" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="saveRoleResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getUsersList">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUsersListResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getRolePermissions">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="strRole" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getRolePermissionsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:permission" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="saveSchema">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="strSchema" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="saveSchemaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteRole">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="strRole" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteRoleResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="deleteCategory">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteCategoryResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="assignPermissionForUser">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="login" type="xs:string" minOccurs="0"/>
+<xs:element name="permissionSysname" type="xs:string" minOccurs="0"/>
+<xs:element name="isAssigned" type="xs:boolean"/>
+<xs:element name="autocreate" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="assignPermissionForUserResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getSchema">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getSchemaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUserAllowedSchemas">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="login" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUserAllowedSchemasResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCategoriesList">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCategoriesListResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="assignPermissionForRole">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="roleSysname" type="xs:string" minOccurs="0"/>
+<xs:element name="permissionSysname" type="xs:string" minOccurs="0"/>
+<xs:element name="isAssigned" type="xs:boolean"/>
+<xs:element name="autocreate" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="assignPermissionForRoleResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="saveCategory">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="strCategory" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="saveCategoryResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:long" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="userHasPermision">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="login" type="xs:string" minOccurs="0"/>
+<xs:element name="permissionSysname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="userHasPermisionResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUsersHavingPermission">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUsersHavingPermissionResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:carabiUser" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="carabiUser">
+<xs:complexContent>
+<xs:extension base="tns:abstractEntity">
+<xs:sequence>
+<xs:element name="allowedSchemas" type="tns:connectionSchema" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="avatar" type="tns:fileOnServer" minOccurs="0"/>
+<xs:element name="carabiDepartment" type="xs:string" minOccurs="0"/>
+<xs:element name="carabiRole" type="xs:string" minOccurs="0"/>
+<xs:element name="corporation" type="tns:department" minOccurs="0"/>
+<xs:element name="defaultSchema" type="tns:connectionSchema" minOccurs="0"/>
+<xs:element name="department" type="tns:department" minOccurs="0"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="entersToServers" type="tns:userServerEnter" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="firstname" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="lastActive" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="lastname" type="xs:string" minOccurs="0"/>
+<xs:element name="login" type="xs:string" minOccurs="0"/>
+<xs:element name="mainServer" type="tns:carabiAppServer" minOccurs="0"/>
+<xs:element name="middlename" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="phonesList" type="tns:phone" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="relatedDepartments" type="tns:department" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="roles" type="tns:userRole" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="showOnlineInt" type="xs:int"/>
+<xs:element name="status" type="tns:userStatus" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="connectionSchema">
+<xs:sequence>
+<xs:element name="address" type="xs:string" minOccurs="0"/>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="JNDI" type="xs:string" minOccurs="0"/>
+<xs:element name="login" type="xs:string" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="sysname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fileOnServer">
+<xs:complexContent>
+<xs:extension base="tns:abstractEntity">
+<xs:sequence>
+<xs:element name="contentAddress" type="xs:string" minOccurs="0"/>
+<xs:element name="contentLength" type="xs:long" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="mimeType" type="xs:string" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="department">
+<xs:complexContent>
+<xs:extension base="tns:abstractEntity">
+<xs:sequence>
+<xs:element name="defaultSchema" type="tns:connectionSchema" minOccurs="0"/>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="mainServer" type="tns:carabiAppServer" minOccurs="0"/>
+<xs:element name="members" type="tns:carabiUser" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="parentDepartmentId" type="xs:int" minOccurs="0"/>
+<xs:element name="sysname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="carabiAppServer">
+<xs:sequence>
+<xs:element name="computer" type="xs:string" minOccurs="0"/>
+<xs:element name="contextroot" type="xs:string" minOccurs="0"/>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="eventerPort" type="xs:int"/>
+<xs:element name="glassfishPort" type="xs:int"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="isEnabledInt" type="xs:int"/>
+<xs:element name="isMasterInt" type="xs:int"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="sysname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="userServerEnter">
+<xs:sequence>
+<xs:element name="numberOfEnters" type="xs:long"/>
+<xs:element name="server" type="tns:carabiAppServer" minOccurs="0"/>
+<xs:element name="user" type="tns:carabiUser" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="phone">
+<xs:complexContent>
+<xs:extension base="tns:abstractEntity">
+<xs:sequence>
+<xs:element name="countryCode" type="xs:int" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="mainNumber" type="xs:long"/>
+<xs:element name="ordernumber" type="xs:int"/>
+<xs:element name="owner" type="tns:carabiUser" minOccurs="0"/>
+<xs:element name="phoneType" type="tns:phoneType" minOccurs="0"/>
+<xs:element name="regionCode" type="xs:int" minOccurs="0"/>
+<xs:element name="sipSchema" type="tns:connectionSchema" minOccurs="0"/>
+<xs:element name="suffix" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="phoneType">
+<xs:sequence>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="sysname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="userRole">
+<xs:complexContent>
+<xs:extension base="tns:abstractEntity">
+<xs:sequence>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="permissions" type="tns:permission" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="sysname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="userStatus">
+<xs:sequence>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="sysname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="saveQuery">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="strQuery" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="saveQueryResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:long" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteUser">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="login" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteUserResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getRolesList">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getRolesListResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:userRole" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RegisterException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+<xs:element name="messageCode" type="tns:messageCode" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="assignRoleForUser">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="login" type="xs:string" minOccurs="0"/>
+<xs:element name="roleSysname" type="xs:string" minOccurs="0"/>
+<xs:element name="isAssigned" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="assignRoleForUserResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:simpleType name="messageCode">
+<xs:restriction base="xs:string">
+<xs:enumeration value="INTERNAL_ERROR"/>
+<xs:enumeration value="ORACLE_ERROR"/>
+<xs:enumeration value="ILLEGAL_LOGIN_OR_PASSWORD"/>
+<xs:enumeration value="NO_LOGIN_KERNEL"/>
+<xs:enumeration value="NO_LOGIN_ORACLE"/>
+<xs:enumeration value="BAD_PASSWORD_KERNEL"/>
+<xs:enumeration value="BAD_PASSWORD_ORACLE"/>
+<xs:enumeration value="NO_WEBUSER"/>
+<xs:enumeration value="NO_SCHEMA"/>
+<xs:enumeration value="NO_TOKEN"/>
+<xs:enumeration value="VERSION_MISMATCH"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>

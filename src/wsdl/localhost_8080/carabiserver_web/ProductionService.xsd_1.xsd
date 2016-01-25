@@ -1,0 +1,264 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://soap.server.carabi.ru/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://soap.server.carabi.ru/">
+
+<xs:element name="CarabiException" type="tns:CarabiException"/>
+
+<xs:element name="allowForUser" type="tns:allowForUser"/>
+
+<xs:element name="allowForUserResponse" type="tns:allowForUserResponse"/>
+
+<xs:element name="checkLastVersion" type="tns:checkLastVersion"/>
+
+<xs:element name="checkLastVersionResponse" type="tns:checkLastVersionResponse"/>
+
+<xs:element name="getVersionsList" type="tns:getVersionsList"/>
+
+<xs:element name="getVersionsListResponse" type="tns:getVersionsListResponse"/>
+
+<xs:element name="grantForUser" type="tns:grantForUser"/>
+
+<xs:element name="grantForUserResponse" type="tns:grantForUserResponse"/>
+
+<xs:complexType name="checkLastVersion">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="productName" type="xs:string" minOccurs="0"/>
+<xs:element name="department" type="xs:string" minOccurs="0"/>
+<xs:element name="ignoreDepartment" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="checkLastVersionResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:productVersion" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="productVersion">
+<xs:sequence>
+<xs:element name="destinatedForDepartment" type="tns:department" minOccurs="0"/>
+<xs:element name="doNotAdviceNewerCommon" type="xs:boolean"/>
+<xs:element name="downloadUrl" type="xs:string" minOccurs="0"/>
+<xs:element name="file" type="tns:fileOnServer" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="issueDate" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="singularity" type="xs:string" minOccurs="0"/>
+<xs:element name="versionNumber" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="department">
+<xs:complexContent>
+<xs:extension base="tns:abstractEntity">
+<xs:sequence>
+<xs:element name="defaultSchema" type="tns:connectionSchema" minOccurs="0"/>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="mainServer" type="tns:carabiAppServer" minOccurs="0"/>
+<xs:element name="members" type="tns:carabiUser" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="parentDepartmentId" type="xs:int" minOccurs="0"/>
+<xs:element name="sysname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="abstractEntity" abstract="true">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="connectionSchema">
+<xs:sequence>
+<xs:element name="address" type="xs:string" minOccurs="0"/>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="JNDI" type="xs:string" minOccurs="0"/>
+<xs:element name="login" type="xs:string" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="sysname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="carabiAppServer">
+<xs:sequence>
+<xs:element name="computer" type="xs:string" minOccurs="0"/>
+<xs:element name="contextroot" type="xs:string" minOccurs="0"/>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="eventerPort" type="xs:int"/>
+<xs:element name="glassfishPort" type="xs:int"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="isEnabledInt" type="xs:int"/>
+<xs:element name="isMasterInt" type="xs:int"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="sysname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="carabiUser">
+<xs:complexContent>
+<xs:extension base="tns:abstractEntity">
+<xs:sequence>
+<xs:element name="allowedSchemas" type="tns:connectionSchema" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="avatar" type="tns:fileOnServer" minOccurs="0"/>
+<xs:element name="carabiDepartment" type="xs:string" minOccurs="0"/>
+<xs:element name="carabiRole" type="xs:string" minOccurs="0"/>
+<xs:element name="corporation" type="tns:department" minOccurs="0"/>
+<xs:element name="defaultSchema" type="tns:connectionSchema" minOccurs="0"/>
+<xs:element name="department" type="tns:department" minOccurs="0"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="entersToServers" type="tns:userServerEnter" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="firstname" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="lastActive" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="lastname" type="xs:string" minOccurs="0"/>
+<xs:element name="login" type="xs:string" minOccurs="0"/>
+<xs:element name="mainServer" type="tns:carabiAppServer" minOccurs="0"/>
+<xs:element name="middlename" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="phonesList" type="tns:phone" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="relatedDepartments" type="tns:department" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="roles" type="tns:userRole" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="showOnlineInt" type="xs:int"/>
+<xs:element name="status" type="tns:userStatus" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="fileOnServer">
+<xs:complexContent>
+<xs:extension base="tns:abstractEntity">
+<xs:sequence>
+<xs:element name="contentAddress" type="xs:string" minOccurs="0"/>
+<xs:element name="contentLength" type="xs:long" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="mimeType" type="xs:string" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="userServerEnter">
+<xs:sequence>
+<xs:element name="numberOfEnters" type="xs:long"/>
+<xs:element name="server" type="tns:carabiAppServer" minOccurs="0"/>
+<xs:element name="user" type="tns:carabiUser" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="phone">
+<xs:complexContent>
+<xs:extension base="tns:abstractEntity">
+<xs:sequence>
+<xs:element name="countryCode" type="xs:int" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="mainNumber" type="xs:long"/>
+<xs:element name="ordernumber" type="xs:int"/>
+<xs:element name="owner" type="tns:carabiUser" minOccurs="0"/>
+<xs:element name="phoneType" type="tns:phoneType" minOccurs="0"/>
+<xs:element name="regionCode" type="xs:int" minOccurs="0"/>
+<xs:element name="sipSchema" type="tns:connectionSchema" minOccurs="0"/>
+<xs:element name="suffix" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="phoneType">
+<xs:sequence>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="sysname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="userRole">
+<xs:complexContent>
+<xs:extension base="tns:abstractEntity">
+<xs:sequence>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="permissions" type="tns:permission" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="sysname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="permission">
+<xs:complexContent>
+<xs:extension base="tns:abstractEntity">
+<xs:sequence>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="parentPermissionId" type="xs:int" minOccurs="0"/>
+<xs:element name="permissionToAssignId" type="xs:int" minOccurs="0"/>
+<xs:element name="sysname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="userStatus">
+<xs:sequence>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="sysname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CarabiException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="grantForUser">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="productName" type="xs:string" minOccurs="0"/>
+<xs:element name="userLogin" type="xs:string" minOccurs="0"/>
+<xs:element name="isGranted" type="xs:boolean"/>
+<xs:element name="autocreate" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="grantForUserResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="allowForUser">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="productName" type="xs:string" minOccurs="0"/>
+<xs:element name="userLogin" type="xs:string" minOccurs="0"/>
+<xs:element name="isAllowed" type="xs:boolean"/>
+<xs:element name="autocreate" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="allowForUserResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getVersionsList">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="productName" type="xs:string" minOccurs="0"/>
+<xs:element name="department" type="xs:string" minOccurs="0"/>
+<xs:element name="ignoreDepartment" type="xs:boolean"/>
+<xs:element name="showAllDepartments" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getVersionsListResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:productVersion" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
