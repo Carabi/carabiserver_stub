@@ -14,48 +14,57 @@
 
 <xs:element name="closeFetchResponse" type="tns:closeFetchResponse"/>
 
+<xs:element name="docSearchXml" type="tns:docSearchXml"/>
+
+<xs:element name="docSearchXmlResponse" type="tns:docSearchXmlResponse"/>
+
 <xs:element name="fetchNext" type="tns:fetchNext"/>
 
 <xs:element name="fetchNextResponse" type="tns:fetchNextResponse"/>
+
+<xs:element name="getCarabiTable" type="tns:getCarabiTable"/>
+
+<xs:element name="getCarabiTableResponse" type="tns:getCarabiTableResponse"/>
+
+<xs:element name="getDocKindFilters" type="tns:getDocKindFilters"/>
+
+<xs:element name="getDocKindFiltersResponse" type="tns:getDocKindFiltersResponse"/>
+
+<xs:element name="getDocKinds" type="tns:getDocKinds"/>
+
+<xs:element name="getDocKindsResponse" type="tns:getDocKindsResponse"/>
+
+<xs:element name="getDocsTableHeader" type="tns:getDocsTableHeader"/>
+
+<xs:element name="getDocsTableHeaderResponse" type="tns:getDocsTableHeaderResponse"/>
+
+<xs:element name="getPropertiesList" type="tns:getPropertiesList"/>
+
+<xs:element name="getPropertiesListResponse" type="tns:getPropertiesListResponse"/>
+
+<xs:element name="runCarabiReportQuery" type="tns:runCarabiReportQuery"/>
+
+<xs:element name="runCarabiReportQueryResponse" type="tns:runCarabiReportQueryResponse"/>
 
 <xs:element name="runStoredQuery" type="tns:runStoredQuery"/>
 
 <xs:element name="runStoredQueryResponse" type="tns:runStoredQueryResponse"/>
 
-<xs:complexType name="closeAllFetches">
+<xs:complexType name="getDocKinds">
 <xs:sequence>
 <xs:element name="token" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="closeAllFetchesResponse">
+<xs:complexType name="getDocKindsResponse">
 <xs:sequence>
-<xs:element name="return" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="CarabiOracleError">
-<xs:sequence>
-<xs:element name="message" type="xs:string" minOccurs="0"/>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
 <xs:complexType name="CarabiException">
 <xs:sequence>
 <xs:element name="message" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="closeFetch">
-<xs:sequence>
-<xs:element name="token" type="xs:string" minOccurs="0"/>
-<xs:element name="queryTag" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="closeFetchResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:int"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -89,9 +98,54 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="CarabiOracleError">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="CarabiOracleMessage">
 <xs:sequence>
 <xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="closeFetch">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="queryTag" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="closeFetchResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="closeAllFetches">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="closeAllFetchesResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPropertiesList">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="kindId" type="xs:int"/>
+<xs:element name="documentId" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPropertiesListResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -109,6 +163,101 @@
 <xs:element name="return" type="xs:int"/>
 <xs:element name="listJson" type="xs:string" minOccurs="0"/>
 <xs:element name="endpos" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDocsTableHeader">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="kindId" type="xs:long" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDocsTableHeaderResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="docSearchXml">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="sessionName" type="xs:string" minOccurs="0"/>
+<xs:element name="xmlTypefilter" type="xs:string" minOccurs="0"/>
+<xs:element name="startPos" type="xs:int"/>
+<xs:element name="fetchCount" type="xs:int"/>
+<xs:element name="queryTag" type="xs:int"/>
+<xs:element name="orderBy" type="tns:orderParameter" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="idList" type="xs:int" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="xmlUserfilter" type="xs:string" minOccurs="0"/>
+<xs:element name="docLike" type="xs:string" minOccurs="0"/>
+<xs:element name="kindId" type="xs:int"/>
+<xs:element name="nocount" type="xs:int"/>
+<xs:element name="browserMask" type="xs:int"/>
+<xs:element name="parentId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="orderParameter">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="dir" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="docSearchXmlResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+<xs:element name="columnsJson" type="xs:string" minOccurs="0"/>
+<xs:element name="listJson" type="xs:string" minOccurs="0"/>
+<xs:element name="endpos" type="xs:int" minOccurs="0"/>
+<xs:element name="lastTag" type="xs:int" minOccurs="0"/>
+<xs:element name="count" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="runCarabiReportQuery">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="reportId" type="xs:long"/>
+<xs:element name="queryName" type="xs:string" minOccurs="0"/>
+<xs:element name="criteries" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="runCarabiReportQueryResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDocKindFilters">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="kindId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDocKindFiltersResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCarabiTable">
+<xs:sequence>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="sessionName" type="xs:string" minOccurs="0"/>
+<xs:element name="tableName" type="xs:string" minOccurs="0"/>
+<xs:element name="fetchCount" type="xs:int"/>
+<xs:element name="fetchAll" type="xs:boolean"/>
+<xs:element name="documentsIds" type="xs:long" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCarabiTableResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

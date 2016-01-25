@@ -25,5 +25,6 @@ Any value defined here will override the pom.xml file value but is only applicab
         <org-netbeans-modules-maven-jaxws._5f_C_5f_MonitorService>http://localhost:8080/carabiserver_web/MonitorService?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_MonitorService>
         <org-netbeans-modules-maven-jaxws._5f_C_5f_ProductionService>http://localhost:8080/carabiserver_web/ProductionService?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_ProductionService>
         <org-netbeans-modules-maven-jaxws._5f_C_5f_GuestService>http://localhost:8080/carabiserver_web/GuestService?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_GuestService>
+        <org-netbeans-modules-maven-jaxws._5f_C_5f_MessageService>http://localhost:8080/carabiserver_web/MessageService?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_MessageService>
     </properties>
 </project-shared-configuration>

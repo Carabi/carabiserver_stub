@@ -4,23 +4,41 @@
 <xsd:import namespace="http://soap.server.carabi.ru/" schemaLocation="http://localhost:8080/carabiserver_web/QueryService?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="closeAllFetches">
-<part name="parameters" element="tns:closeAllFetches"/>
+<message name="getDocsTableHeader">
+<part name="parameters" element="tns:getDocsTableHeader"/>
 </message>
-<message name="closeAllFetchesResponse">
-<part name="parameters" element="tns:closeAllFetchesResponse"/>
-</message>
-<message name="CarabiOracleError">
-<part name="fault" element="tns:CarabiOracleError"/>
+<message name="getDocsTableHeaderResponse">
+<part name="parameters" element="tns:getDocsTableHeaderResponse"/>
 </message>
 <message name="CarabiException">
 <part name="fault" element="tns:CarabiException"/>
 </message>
-<message name="closeFetch">
-<part name="parameters" element="tns:closeFetch"/>
+<message name="getPropertiesList">
+<part name="parameters" element="tns:getPropertiesList"/>
 </message>
-<message name="closeFetchResponse">
-<part name="parameters" element="tns:closeFetchResponse"/>
+<message name="getPropertiesListResponse">
+<part name="parameters" element="tns:getPropertiesListResponse"/>
+</message>
+<message name="getDocKinds">
+<part name="parameters" element="tns:getDocKinds"/>
+</message>
+<message name="getDocKindsResponse">
+<part name="parameters" element="tns:getDocKindsResponse"/>
+</message>
+<message name="getDocKindFilters">
+<part name="parameters" element="tns:getDocKindFilters"/>
+</message>
+<message name="getDocKindFiltersResponse">
+<part name="parameters" element="tns:getDocKindFiltersResponse"/>
+</message>
+<message name="CarabiOracleError">
+<part name="fault" element="tns:CarabiOracleError"/>
+</message>
+<message name="docSearchXml">
+<part name="parameters" element="tns:docSearchXml"/>
+</message>
+<message name="docSearchXmlResponse">
+<part name="parameters" element="tns:docSearchXmlResponse"/>
 </message>
 <message name="fetchNext">
 <part name="parameters" element="tns:fetchNext"/>
@@ -37,18 +55,56 @@
 <message name="CarabiOracleMessage">
 <part name="fault" element="tns:CarabiOracleMessage"/>
 </message>
+<message name="runCarabiReportQuery">
+<part name="parameters" element="tns:runCarabiReportQuery"/>
+</message>
+<message name="runCarabiReportQueryResponse">
+<part name="parameters" element="tns:runCarabiReportQueryResponse"/>
+</message>
+<message name="getCarabiTable">
+<part name="parameters" element="tns:getCarabiTable"/>
+</message>
+<message name="getCarabiTableResponse">
+<part name="parameters" element="tns:getCarabiTableResponse"/>
+</message>
+<message name="closeFetch">
+<part name="parameters" element="tns:closeFetch"/>
+</message>
+<message name="closeFetchResponse">
+<part name="parameters" element="tns:closeFetchResponse"/>
+</message>
+<message name="closeAllFetches">
+<part name="parameters" element="tns:closeAllFetches"/>
+</message>
+<message name="closeAllFetchesResponse">
+<part name="parameters" element="tns:closeAllFetchesResponse"/>
+</message>
 <portType name="QueryService">
-<operation name="closeAllFetches">
-<input wsam:Action="http://soap.server.carabi.ru/QueryService/closeAllFetchesRequest" message="tns:closeAllFetches"/>
-<output wsam:Action="http://soap.server.carabi.ru/QueryService/closeAllFetchesResponse" message="tns:closeAllFetchesResponse"/>
-<fault message="tns:CarabiOracleError" name="CarabiOracleError" wsam:Action="http://soap.server.carabi.ru/QueryService/closeAllFetches/Fault/CarabiOracleError"/>
-<fault message="tns:CarabiException" name="CarabiException" wsam:Action="http://soap.server.carabi.ru/QueryService/closeAllFetches/Fault/CarabiException"/>
+<operation name="getDocsTableHeader">
+<input wsam:Action="http://soap.server.carabi.ru/QueryService/getDocsTableHeaderRequest" message="tns:getDocsTableHeader"/>
+<output wsam:Action="http://soap.server.carabi.ru/QueryService/getDocsTableHeaderResponse" message="tns:getDocsTableHeaderResponse"/>
+<fault message="tns:CarabiException" name="CarabiException" wsam:Action="http://soap.server.carabi.ru/QueryService/getDocsTableHeader/Fault/CarabiException"/>
 </operation>
-<operation name="closeFetch">
-<input wsam:Action="http://soap.server.carabi.ru/QueryService/closeFetchRequest" message="tns:closeFetch"/>
-<output wsam:Action="http://soap.server.carabi.ru/QueryService/closeFetchResponse" message="tns:closeFetchResponse"/>
-<fault message="tns:CarabiOracleError" name="CarabiOracleError" wsam:Action="http://soap.server.carabi.ru/QueryService/closeFetch/Fault/CarabiOracleError"/>
-<fault message="tns:CarabiException" name="CarabiException" wsam:Action="http://soap.server.carabi.ru/QueryService/closeFetch/Fault/CarabiException"/>
+<operation name="getPropertiesList">
+<input wsam:Action="http://soap.server.carabi.ru/QueryService/getPropertiesListRequest" message="tns:getPropertiesList"/>
+<output wsam:Action="http://soap.server.carabi.ru/QueryService/getPropertiesListResponse" message="tns:getPropertiesListResponse"/>
+<fault message="tns:CarabiException" name="CarabiException" wsam:Action="http://soap.server.carabi.ru/QueryService/getPropertiesList/Fault/CarabiException"/>
+</operation>
+<operation name="getDocKinds">
+<input wsam:Action="http://soap.server.carabi.ru/QueryService/getDocKindsRequest" message="tns:getDocKinds"/>
+<output wsam:Action="http://soap.server.carabi.ru/QueryService/getDocKindsResponse" message="tns:getDocKindsResponse"/>
+<fault message="tns:CarabiException" name="CarabiException" wsam:Action="http://soap.server.carabi.ru/QueryService/getDocKinds/Fault/CarabiException"/>
+</operation>
+<operation name="getDocKindFilters">
+<input wsam:Action="http://soap.server.carabi.ru/QueryService/getDocKindFiltersRequest" message="tns:getDocKindFilters"/>
+<output wsam:Action="http://soap.server.carabi.ru/QueryService/getDocKindFiltersResponse" message="tns:getDocKindFiltersResponse"/>
+<fault message="tns:CarabiException" name="CarabiException" wsam:Action="http://soap.server.carabi.ru/QueryService/getDocKindFilters/Fault/CarabiException"/>
+<fault message="tns:CarabiOracleError" name="CarabiOracleError" wsam:Action="http://soap.server.carabi.ru/QueryService/getDocKindFilters/Fault/CarabiOracleError"/>
+</operation>
+<operation name="docSearchXml">
+<input wsam:Action="http://soap.server.carabi.ru/QueryService/docSearchXmlRequest" message="tns:docSearchXml"/>
+<output wsam:Action="http://soap.server.carabi.ru/QueryService/docSearchXmlResponse" message="tns:docSearchXmlResponse"/>
+<fault message="tns:CarabiException" name="CarabiException" wsam:Action="http://soap.server.carabi.ru/QueryService/docSearchXml/Fault/CarabiException"/>
 </operation>
 <operation name="fetchNext">
 <input wsam:Action="http://soap.server.carabi.ru/QueryService/fetchNextRequest" message="tns:fetchNext"/>
@@ -62,10 +118,32 @@
 <fault message="tns:CarabiOracleError" name="CarabiOracleError" wsam:Action="http://soap.server.carabi.ru/QueryService/runStoredQuery/Fault/CarabiOracleError"/>
 <fault message="tns:CarabiOracleMessage" name="CarabiOracleMessage" wsam:Action="http://soap.server.carabi.ru/QueryService/runStoredQuery/Fault/CarabiOracleMessage"/>
 </operation>
+<operation name="runCarabiReportQuery">
+<input wsam:Action="http://soap.server.carabi.ru/QueryService/runCarabiReportQueryRequest" message="tns:runCarabiReportQuery"/>
+<output wsam:Action="http://soap.server.carabi.ru/QueryService/runCarabiReportQueryResponse" message="tns:runCarabiReportQueryResponse"/>
+<fault message="tns:CarabiException" name="CarabiException" wsam:Action="http://soap.server.carabi.ru/QueryService/runCarabiReportQuery/Fault/CarabiException"/>
+</operation>
+<operation name="getCarabiTable">
+<input wsam:Action="http://soap.server.carabi.ru/QueryService/getCarabiTableRequest" message="tns:getCarabiTable"/>
+<output wsam:Action="http://soap.server.carabi.ru/QueryService/getCarabiTableResponse" message="tns:getCarabiTableResponse"/>
+<fault message="tns:CarabiException" name="CarabiException" wsam:Action="http://soap.server.carabi.ru/QueryService/getCarabiTable/Fault/CarabiException"/>
+</operation>
+<operation name="closeFetch">
+<input wsam:Action="http://soap.server.carabi.ru/QueryService/closeFetchRequest" message="tns:closeFetch"/>
+<output wsam:Action="http://soap.server.carabi.ru/QueryService/closeFetchResponse" message="tns:closeFetchResponse"/>
+<fault message="tns:CarabiOracleError" name="CarabiOracleError" wsam:Action="http://soap.server.carabi.ru/QueryService/closeFetch/Fault/CarabiOracleError"/>
+<fault message="tns:CarabiException" name="CarabiException" wsam:Action="http://soap.server.carabi.ru/QueryService/closeFetch/Fault/CarabiException"/>
+</operation>
+<operation name="closeAllFetches">
+<input wsam:Action="http://soap.server.carabi.ru/QueryService/closeAllFetchesRequest" message="tns:closeAllFetches"/>
+<output wsam:Action="http://soap.server.carabi.ru/QueryService/closeAllFetchesResponse" message="tns:closeAllFetchesResponse"/>
+<fault message="tns:CarabiOracleError" name="CarabiOracleError" wsam:Action="http://soap.server.carabi.ru/QueryService/closeAllFetches/Fault/CarabiOracleError"/>
+<fault message="tns:CarabiException" name="CarabiException" wsam:Action="http://soap.server.carabi.ru/QueryService/closeAllFetches/Fault/CarabiException"/>
+</operation>
 </portType>
 <binding name="QueryServicePortBinding" type="tns:QueryService">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="closeAllFetches">
+<operation name="getDocsTableHeader">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -73,14 +151,11 @@
 <output>
 <soap:body use="literal"/>
 </output>
-<fault name="CarabiOracleError">
-<soap:fault name="CarabiOracleError" use="literal"/>
-</fault>
 <fault name="CarabiException">
 <soap:fault name="CarabiException" use="literal"/>
 </fault>
 </operation>
-<operation name="closeFetch">
+<operation name="getPropertiesList">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -88,9 +163,45 @@
 <output>
 <soap:body use="literal"/>
 </output>
+<fault name="CarabiException">
+<soap:fault name="CarabiException" use="literal"/>
+</fault>
+</operation>
+<operation name="getDocKinds">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="CarabiException">
+<soap:fault name="CarabiException" use="literal"/>
+</fault>
+</operation>
+<operation name="getDocKindFilters">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="CarabiException">
+<soap:fault name="CarabiException" use="literal"/>
+</fault>
 <fault name="CarabiOracleError">
 <soap:fault name="CarabiOracleError" use="literal"/>
 </fault>
+</operation>
+<operation name="docSearchXml">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
 <fault name="CarabiException">
 <soap:fault name="CarabiException" use="literal"/>
 </fault>
@@ -123,6 +234,60 @@
 </fault>
 <fault name="CarabiOracleMessage">
 <soap:fault name="CarabiOracleMessage" use="literal"/>
+</fault>
+</operation>
+<operation name="runCarabiReportQuery">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="CarabiException">
+<soap:fault name="CarabiException" use="literal"/>
+</fault>
+</operation>
+<operation name="getCarabiTable">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="CarabiException">
+<soap:fault name="CarabiException" use="literal"/>
+</fault>
+</operation>
+<operation name="closeFetch">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="CarabiOracleError">
+<soap:fault name="CarabiOracleError" use="literal"/>
+</fault>
+<fault name="CarabiException">
+<soap:fault name="CarabiException" use="literal"/>
+</fault>
+</operation>
+<operation name="closeAllFetches">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="CarabiOracleError">
+<soap:fault name="CarabiOracleError" use="literal"/>
+</fault>
+<fault name="CarabiException">
+<soap:fault name="CarabiException" use="literal"/>
 </fault>
 </operation>
 </binding>

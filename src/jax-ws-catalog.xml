@@ -8,8 +8,6 @@
     <system systemId="http://localhost:8080/carabiserver_web/AdminService?xsd=1" uri="wsdl/localhost_8080/carabiserver_web/AdminService.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/carabiserver_web/EventerService?wsdl" uri="wsdl/localhost_8080/carabiserver_web/EventerService.wsdl"/>
     <system systemId="http://localhost:8080/carabiserver_web/EventerService?xsd=1" uri="wsdl/localhost_8080/carabiserver_web/EventerService.xsd_1.xsd"/>
-    <system systemId="http://localhost:8080/carabiserver_web/QueryService?wsdl" uri="wsdl/localhost_8080/carabiserver_web/QueryService.wsdl"/>
-    <system systemId="http://localhost:8080/carabiserver_web/QueryService?xsd=1" uri="wsdl/localhost_8080/carabiserver_web/QueryService.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/carabiserver_web/ChatService?wsdl" uri="wsdl/localhost_8080/carabiserver_web/ChatService.wsdl"/>
     <system systemId="http://localhost:8080/carabiserver_web/ChatService?xsd=1" uri="wsdl/localhost_8080/carabiserver_web/ChatService.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/carabiserver_web/ImagesService?wsdl" uri="wsdl/localhost_8080/carabiserver_web/ImagesService.wsdl"/>
@@ -24,4 +22,8 @@
     <system systemId="http://localhost:8080/carabiserver_web/ProductionService?xsd=1" uri="wsdl/localhost_8080/carabiserver_web/ProductionService.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/carabiserver_web/GuestService?wsdl" uri="wsdl/localhost_8080/carabiserver_web/GuestService.wsdl"/>
     <system systemId="http://localhost:8080/carabiserver_web/GuestService?xsd=1" uri="wsdl/localhost_8080/carabiserver_web/GuestService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/carabiserver_web/MessageService?wsdl" uri="wsdl/localhost_8080/carabiserver_web/MessageService.wsdl"/>
+    <system systemId="http://localhost:8080/carabiserver_web/MessageService?xsd=1" uri="wsdl/localhost_8080/carabiserver_web/MessageService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/carabiserver_web/QueryService?wsdl" uri="wsdl/localhost_8080/carabiserver_web/QueryService.wsdl"/>
+    <system systemId="http://localhost:8080/carabiserver_web/QueryService?xsd=1" uri="wsdl/localhost_8080/carabiserver_web/QueryService.xsd_1.xsd"/>
 </catalog>
